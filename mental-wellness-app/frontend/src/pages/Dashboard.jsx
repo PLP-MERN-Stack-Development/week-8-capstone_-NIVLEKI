@@ -9,8 +9,9 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
-  const [moods, setMoods] = useState([]);
-  const [journalEntries, setJournalEntries] = useState([]);
+  const [moods, setMoods] = useState([{ mood: 'happy', date: new Date() },
+    { mood: 'neutral', date: new Date(Date.now() - 86400000) }]);
+  const [journalEntries, setJournalEntries] = useState([{ _id: '1', title: 'First Entry', content: 'Sample content', date: new Date() }]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
